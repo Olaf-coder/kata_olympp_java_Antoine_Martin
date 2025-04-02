@@ -1,16 +1,16 @@
 package fr.olympp.kata.repository;
 
-import fr.olympp.kata.models.Clan;
+import fr.olympp.kata.models.Dto.ClanDto;
 
 import java.util.List;
 
 public interface ClanRepository {
 
-    public void addClan(Clan clan);
+    public void addClan(ClanDto clanDto);
 
-    public Clan updateClan(Clan clan);
+    public ClanDto updateClan(ClanDto clanDto);
 
-    public Clan getClan(String name);
+    public ClanDto getClan(String name);
 
-    List<Clan> getClans();
+    List<ClanDto> getClans();
 }

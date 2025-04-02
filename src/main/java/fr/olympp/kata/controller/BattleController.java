@@ -1,7 +1,7 @@
 package fr.olympp.kata.controller;
 
-import fr.olympp.kata.models.BattleReport;
-import fr.olympp.kata.models.Clan;
+import fr.olympp.kata.models.Dto.BattleReportDto;
+import fr.olympp.kata.models.Dto.ClanDto;
 import fr.olympp.kata.services.BattleService;
 import fr.olympp.kata.services.ClanService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +22,8 @@ public class BattleController {
   }
 
   @GetMapping
-  public BattleReport battle() {
-    List<Clan> clans = this.clanServices.getClans();
-    return this.battleService.battle(clans.getFirst(), clans.getLast());
+  public BattleReportDto battle() {
+    List<ClanDto> clanDtos = this.clanServices.getClans();
+    return this.battleService.battle(clanDtos.getFirst(), clanDtos.getLast());
   }
 }
